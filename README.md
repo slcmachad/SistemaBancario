@@ -18,5 +18,8 @@ Maven: Ferramenta de gerenciamento de dependências e construção do projeto.
 
     - [📦 Banco de Dados ]
 
+PostgreSQL: Sistema de gerenciamento de banco de dados relacional utilizado para armazenar dados do aplicativo.
+
+
 ## Contribuindo
 Sinta-se à vontade para abrir issues ou enviar pull requests para melhorias e correções. Contribuições são bem-vindas!
