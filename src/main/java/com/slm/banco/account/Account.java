@@ -1,12 +1,20 @@
 package com.slm.banco.account;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Table(name = "account")
 @Entity(name = "account")
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
 public class Account {
 
     @Id
@@ -18,4 +26,8 @@ public class Account {
 //    private BigDecimal balance;   // Saldo da conta
 //    private Date dateOpened;       // Data de abertura da conta
 //    private boolean isActive;      // Estado da conta (ativa/inativa)
+
+    public  Account(AccountRequestDTO data){
+        this.accountNumber = data.accountNumber();
+    }
 }

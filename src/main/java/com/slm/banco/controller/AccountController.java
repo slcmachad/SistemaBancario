@@ -2,10 +2,10 @@ package com.slm.banco.controller;
 
 import com.slm.banco.account.Account;
 import com.slm.banco.account.AccountRepository;
+import com.slm.banco.account.AccountRequestDTO;
+import com.slm.banco.account.AccountResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,10 +15,20 @@ public class AccountController {
 
     @Autowired
     private AccountRepository repository;
-    @GetMapping
-    public List<Account> getAll(){
 
-        List<Account> accountList = repository.findAll();
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping
+    public void saveAccount(@RequestBody AccountRequestDTO data){
+        Account accountData = new Account(data);
+        repository.save(accountData);
+        return;
+    }
+
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping
+    public List<AccountResponseDTO> getAll(){
+
+        List<AccountResponseDTO> accountList = repository.findAll().stream().map(AccountResponseDTO::new).toList();
         return accountList;
 
     }
