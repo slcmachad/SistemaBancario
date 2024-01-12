@@ -1,4 +1,4 @@
-package com.slm.banco.account;
+package com.slm.banco.domain.account;
 
 public record AccountRequestDTO(String accountNumber) {
 

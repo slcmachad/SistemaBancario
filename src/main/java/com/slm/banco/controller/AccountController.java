@@ -1,9 +1,9 @@
 package com.slm.banco.controller;
 
-import com.slm.banco.account.Account;
-import com.slm.banco.account.AccountRepository;
-import com.slm.banco.account.AccountRequestDTO;
-import com.slm.banco.account.AccountResponseDTO;
+import com.slm.banco.domain.account.Account;
+import com.slm.banco.repository.AccountRepository;
+import com.slm.banco.domain.account.AccountRequestDTO;
+import com.slm.banco.domain.account.AccountResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
